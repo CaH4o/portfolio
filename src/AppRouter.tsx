@@ -1,17 +1,17 @@
 import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
+import AppPage from "./components/AppPage";
 import Home from "./components/pages/Home";
 import Error from "./components/pages/Error";
 import Projects from "./components/pages/Projects";
 import SingleProject from "./components/pages/SingleProject";
-import Page from "./components/Page";
 
 export default function AppRouter() {
   const router = createBrowserRouter([
     {
       path: "",
-      element: <Page />,
+      element: <AppPage />,
       children: [
         {
           index: true,

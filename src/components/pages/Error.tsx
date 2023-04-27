@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import { Box } from "@mui/material";
 
-export default function Error(): JSX.Element  {
+export default function Error(): JSX.Element {
   return (
-    <div>Error</div>
-  )
+    <Box component="main" sx={{ p: 3 }}>
+      Error
+    </Box>
+  );
 }
