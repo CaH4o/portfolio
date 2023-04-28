@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -10,13 +10,12 @@ import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
-const drawerWidth = 240;
+const drawerWidth = 220;
 const navItems = [
   { name: "Home", link: "" },
   { name: "Projects", link: "projects" },
@@ -57,12 +56,20 @@ export default function Header(): JSX.Element {
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <Button key={item.name} sx={{ color: "#fff" }}>
-                <Link
-                  style={{ color: "inherit", textDecoration: "none" }}
+                <NavLink
                   to={item.link}
+                  style={({ isActive }) =>
+                    isActive
+                      ? {
+                          color: "blue",
+                          textDecoration: "none",
+                          fontWeight: "bold",
+                        }
+                      : { color: "inherit", textDecoration: "none" }
+                  }
                 >
                   {item.name}
-                </Link>
+                </NavLink>
               </Button>
             ))}
           </Box>
@@ -74,7 +81,7 @@ export default function Header(): JSX.Element {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "block", sm: "none" },
@@ -93,12 +100,20 @@ export default function Header(): JSX.Element {
               {navItems.map((item) => (
                 <ListItem key={item.name} disablePadding>
                   <ListItemButton sx={{ textAlign: "center" }}>
-                    <Link
-                      style={{ color: "inherit", textDecoration: "none" }}
+                    <NavLink
                       to={item.link}
+                      style={({ isActive }) =>
+                        isActive
+                          ? {
+                              color: "blue",
+                              textDecoration: "none",
+                              fontWeight: "bold",
+                            }
+                          : { color: "inherit", textDecoration: "none" }
+                      }
                     >
                       {item.name}
-                    </Link>
+                    </NavLink>
                   </ListItemButton>
                 </ListItem>
               ))}
