@@ -18,9 +18,8 @@ import Button from "@mui/material/Button";
 const drawerWidth = 220;
 const navItems = [
   { name: "Home", link: "" },
+  { name: "CV", link: "cv" },
   { name: "Projects", link: "projects" },
-  { name: "About", link: "projects/about" },
-  { name: "Contact", link: "projects-error" },
 ];
 
 export default function Header(): JSX.Element {

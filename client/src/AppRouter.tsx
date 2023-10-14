@@ -1,11 +1,12 @@
-import React from "react";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import React from "react"
+import { RouterProvider, createBrowserRouter } from "react-router-dom"
 
-import AppPage from "./components/AppPage";
-import Home from "./components/pages/Home";
-import Error from "./components/pages/Error";
-import Projects from "./components/pages/Projects";
-import SingleProject from "./components/pages/SingleProject";
+import AppPage from "./pages/AppPage"
+import Home from "./pages/Home"
+import CV from "./pages/CV"
+import Projects from "./pages/Projects"
+import SingleProject from "./pages/SingleProject"
+import Error from "./pages/Error"
 
 export default function AppRouter() {
   const router = createBrowserRouter([
@@ -16,6 +17,10 @@ export default function AppRouter() {
         {
           index: true,
           element: <Home />,
+        },
+        {
+          path: "cv",
+          element: <CV />,
         },
         {
           path: "projects",
@@ -36,7 +41,7 @@ export default function AppRouter() {
         },
       ],
     },
-  ]);
+  ])
 
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={router} />
 }

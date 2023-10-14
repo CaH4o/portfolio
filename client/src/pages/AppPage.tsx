@@ -2,8 +2,8 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { Box } from "@mui/material";
 
-import Header from "./pagesParts/Header";
-import Footer from "./pagesParts/Footer";
+import Header from "./Header";
+import Footer from "./Footer";
 
 export default function Page(): JSX.Element {
   return (
